@@ -2,16 +2,11 @@ import { Injectable } from '@angular/core';
 import gql from 'graphql-tag';
 import {ApolloCurrentResult} from 'apollo-client/core/ObservableQuery';
 import {Apollo} from 'apollo-angular';
-
-import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
-import { JwtService } from './jwt.service';
-
 
 import {User} from '../models/user.model';
 
@@ -111,10 +106,8 @@ export class AuthService {
 
     if (localStorage.getItem(AUTH_TOKEN_KEY) && this.getUser()) {
       const userID = this.getUser()['id'];
-      console.log(userID);
       this.syncUser(userID);
       this.setAuth(this.user);
-      console.log(this.user);
     } else {
       // Remove any potential remnants of previous auth states
       this.logout();
