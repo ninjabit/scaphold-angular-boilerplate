@@ -1,7 +1,21 @@
-# Angular4
+# Angular Scaphold.io Boilerplate
+
+## Description
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+It uses the great [scaphold.io](http://scaphold.io) service as a graphql backend
+providing with a scaphold client, an authentication service to register and login to the backend
+and some useful module and component to see the authentication flow in place.
+It leverages the JWT authentication, injecting the authenticated request in the graphql network interface.
+
+It also provides with some RxJS patterns to make the currentUser observable and subscribe to it.
+
+## Configuration
+
+The scaphold client comes with a config.ts - in the project root - file where to place your scaphold app configuration information,
+ like the app URL and any other userful parameter to deal with (eg: integrations configurations and such).
+ 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
